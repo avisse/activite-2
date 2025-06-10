@@ -10,7 +10,7 @@ Développer une API REST très simple, la conteneuriser, puis la déployer en lo
 
 ---
 
-## ⚙️ Outils utilisés
+## Outils utilisés
 
 - Java 17
 - Spring Boot 3.5.0
