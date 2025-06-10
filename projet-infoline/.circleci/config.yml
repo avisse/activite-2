@@ -1,0 +1,28 @@
+version: 2.1
+
+executors:
+  node-executor:
+    docker:
+      - image: cimg/node:20.19.0
+    working_directory: ~/repo
+
+jobs:
+  build-and-test:
+    executor: node-executor
+    steps:
+      - checkout
+      - run:
+          name: Installer les dépendances
+          command: npm ci
+      - run:
+          name: Build Angular App
+          command: npm run build
+      - run:
+          name: Skipping tests (pas encore en place)
+          command: echo "Bonjour studi  steve avisse"
+
+workflows:
+  version: 2
+  default:
+    jobs:
+      - build-and-test
