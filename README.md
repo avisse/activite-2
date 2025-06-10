@@ -440,7 +440,7 @@ kubectl delete -f deployment.yaml
 # Arrêter le cluster Minikube
 minikube stop
 
-# (Optionnel) Supprimer complètement le cluster Minikube
+# Supprimer complètement le cluster Minikube
 minikube delete
 ```
 
@@ -638,7 +638,7 @@ Donc j’ai modifié l’image Docker utilisée dans le `config.yml` en :
 image: cimg/node:20.19.1
 ```
 
-Et là, le build a réussi.
+Et la, le build a réussi.
 
 ### 5. Troisième problème : pas assez d’espace disque
 
