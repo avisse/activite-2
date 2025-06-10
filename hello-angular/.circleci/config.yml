@@ -1,0 +1,29 @@
+version: 2.1
+
+executors:
+  node-executor:
+    docker:
+      - image: cimg/node:18.20.0
+    working_directory: ~/project
+
+jobs:
+  build-and-test:
+    executor: node-executor
+    steps:
+      - checkout
+      - run:
+          name: Installer les dépendances
+          command: npm ci
+      - run:
+          name: Build Angular
+          command: npm run build
+      - run:
+          name: Lancer les tests
+          command: npm test -- --watch=false --browsers=ChromeHeadless
+
+workflows:
+  build-workflow:
+    jobs:
+      - build-and-test
+
+
